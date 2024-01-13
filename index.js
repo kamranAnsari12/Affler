@@ -1,7 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import db from "./db/index.js";
-const app=express();
+// const app=express();
+import { app } from "./app.js";
 dotenv.config();
 db().then(()=>
 {
