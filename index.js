@@ -3,12 +3,16 @@ import dotenv from "dotenv";
 import db from "./db/index.js";
 // const app=express();
 import { app } from "./app.js";
-dotenv.config();
-db().then(()=>
+dotenv.config(
+    {
+        path:'./env'
+    }
+);
+db().then(()=> 
 {
-    app.listen(process.env.PORT||8000,(req,res)=>
+    app.listen(process.env.PORT,()=>
     { 
-        console.log(`connected server`)
+        console.log(`connected server ${process.env.PORT}`)
         // console.log(process.env.CLOUDINARY_CLOUD_NAME)
     })
 }).catch((error)=>
