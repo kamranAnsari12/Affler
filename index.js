@@ -6,8 +6,9 @@ dotenv.config();
 db().then(()=>
 {
     app.listen(process.env.PORT||8000,(req,res)=>
-    {
+    { 
         console.log(`connected server`)
+        // console.log(process.env.CLOUDINARY_CLOUD_NAME)
     })
 }).catch((error)=>
 {
